@@ -2,6 +2,11 @@
 Simple packet radio on ATMEGA328p (arduino) and CC1101 chip.  Allows bidirectional communication from PC/smartphone(when USB to Serial used) to PC/smartphone.
 The code is based on PANSTAMP library adopted by  Panagiotis Karagiannis for pure AVR-GCC. Hex file to be uploaded directly to ATMEGA328P via USBASP programmer.
 
+To upload program code to the chip using cheapest USBASP programmer (less than 2 USD on eBay/Aliexpress) look at this page : http://www.learningaboutelectronics.com/Articles/Program-AVR-chip-using-a-USBASP-with-10-pin-cable.php
+
+The script attached in repository ( "compileatmega"  ) can be used to upload data to the chip if you have Linux machine with following packages : "avr-gcc" and "avrdude". For example in Ubuntu download these packages using command : "sudo apt-get install avr-gcc" and "sudo apt-get install avrdude" and you are ready to go.
+
+
 Current settings of the devices are : Radio 38400 bps,  operating frequerncy 433MHz, 9600baud on serial port PC, 10mW of Power.
 If you want different setting you need to use SmartRF application from Texas Instruments to generate the settings for CC1101 chip registers : http://www.ti.com/tool/SMARTRFTM-STUDIO
 
