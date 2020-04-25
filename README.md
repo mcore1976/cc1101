@@ -7,6 +7,8 @@ To upload program code to the chip using cheapest USBASP programmer (less than 2
 
 LINUX PC :
 
+Link to video how to program the chip : https://www.youtube.com/watch?v=7klgyNzZ2TI
+
 The script attached in repository ( "compileatmega"  ) can be used to upload data to the chip if you have Linux machine with with following packages : "avr-gcc", "avr-libc" and "avrdude". For example in Ubuntu download these packages using command : "sudo apt-get install avr-gcc" , "sudo apt-get install avr-libc", "sudo apt-get install avrdude" and you are ready to go.
 
 WINDOWS PC :
