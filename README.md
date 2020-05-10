@@ -3,17 +3,27 @@ Simple packet radio on ATMEGA328p (arduino) and CC1101 chip.
 Allows bidirectional communication from PC/smartphone(when USB to Serial used) to PC/smartphone.
 The code is based on PANSTAMP library adopted by  Panagiotis Karagiannis for pure AVR-GCC. Hex file to be uploaded directly to ATMEGA328P via USBASP programmer.
 
-To upload program code to the chip using cheapest USBASP programmer (less than 2 USD on eBay/Aliexpress) look at this page : http://www.learningaboutelectronics.com/Articles/Program-AVR-chip-using-a-USBASP-with-10-pin-cable.php
+You can see how it works here : https://www.youtube.com/watch?v=4cPxHEn-Uqc
 
-LINUX PC :
+
+To upload program code to the chip using cheapest USBASP programmer (less than 2 USD on eBay/Aliexpress) look at this page : http://www.learningaboutelectronics.com/Articles/Program-AVR-chip-using-a-USBASP-with-10-pin-cable.php
 
 Link to video how to program the chip : https://www.youtube.com/watch?v=7klgyNzZ2TI
 
+-------------------------------------------------------------------------------------------------------------------------------
+
+LINUX PC :
+
+
 The script attached in repository ( "compileatmega"  ) can be used to upload data to the chip if you have Linux machine with with following packages : "avr-gcc", "avr-libc" and "avrdude". For example in Ubuntu download these packages using command : "sudo apt-get install avr-gcc" , "sudo apt-get install avr-libc", "sudo apt-get install avrdude" and you are ready to go.
+
+-----------------------------------------------------------------------------------------------------------------------------
 
 WINDOWS PC :
 
 If you have Windows 10 machine - follow this tutorial to download and install full AVR-GCC environment : http://fab.cba.mit.edu/classes/863.16/doc/projects/ftsmin/windows_avr.html and use "compileatmegaXX.bat" files for compilaton in the directory where you have downloaded mainX.c files. You have to be logged as Windows Administrator and run "cmd" from search window to do that. Then use commands like "cd XXXXX" to change working directory to get to downloaded source files.
+
+----------------------------------------------------------------------------------------------------------------------------
 
 HARDWARE DETAILS :
 
@@ -30,8 +40,12 @@ PUTTY terminal must be configured for 9600 bps, 8N1, no flowcontrol check
 
 In the code I am using ATMEGA328P interrupt from Serial UART ( to receive ASCII from Serial Port of PC) and interrupt from INT0 pin ( which is connected to GDO0 on CC1101 breadboard) which is generated when data transmitted/received over CC1101 radio.
 
+After fine tuning of CC1101 radio options - by enabling :
+a) 2-FSK modulation 
+b) lowering Radio speed to 1200 baud 
+c) frame size 32 bytes, 
+d) deviation +-5.2k
+- you can achieve communication range up to several kilometers even with 10mW radio power.
 
-
-You can see how it works here : https://www.youtube.com/watch?v=4cPxHEn-Uqc
 
 Have fun !
